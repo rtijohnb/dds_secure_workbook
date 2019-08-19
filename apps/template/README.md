@@ -16,18 +16,17 @@ mv appname.cnf myapp.cnf
 Where "myapp" is your application's name.
 
 4. Edit the <myapp>.cnf file and change the fields within it per the comments.
-5. Edit the create_identity.sh file and change the string "appname" to your application name.
-6. Edit the create_permissions.sh file and change the string "appname" to your application name.
-7. Edit the sign_permissions.sh file and change the string "appname" to your application name.
-8. Run the create_identity.sh file to create the private key and identity cert for your application.
+5. Edit the create_identity.sh file and change the string "demo_app" to your application name.
+6. Edit the sign_permissions.sh file and change the string "demo_app" to your application name.
+7. Run the create_identity.sh file to create the private key and identity cert for your application.
 
 ./create_identity.sh
 
-9. Edit the appname_permissions.xml file to set the permissions for your application.
+8. Edit the appname_permissions.xml file to set the permissions for your application.
    Follow the directions provided in the comments in the XML file.  Save your file.
 
-10. Sign the permissions file:
+9. Sign the permissions file:
 
 ./sign_permissions.sh
 
-11. Modify USER_QOS_PROFILES.xml to point to your security artifacts and the copy it to the deploy folder
+10. Modify USER_QOS_PROFILES.xml to point to your security artifacts and the copy it to the deploy folder

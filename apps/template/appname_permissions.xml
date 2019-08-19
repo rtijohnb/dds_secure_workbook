@@ -5,10 +5,10 @@
 
     <permissions>
 
-        <grant name="AppNamePermissions">
+        <grant name="demo_appPermissions">
 
-            <!-- TODO: Change the fields below to match those in your appname.cnf file.  Change the appname to your app's name -->
-            <subject_name>/C=US/ST=NC/O=Real Time Innovations/CN=appname/emailAddress=appname@rti.com</subject_name>
+            <!-- TODO: Change the fields below to match those in your appname.cnf file.  Change 'demo_app' to your app's name -->
+            <subject_name>/C=US/ST=NC/O=Real Time Innovations/CN=demo_app/emailAddress=demo_app@rti.com</subject_name>
 
             <validity>
                 <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
@@ -40,7 +40,7 @@
                 <domains>
                     <id_range>
                         <min>50</min>
-                        <max>250</max>
+                        <max>100</max>
                     </id_range>
                 </domains>
 
