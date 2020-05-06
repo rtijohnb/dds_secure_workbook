@@ -10,8 +10,8 @@ distinguished_name	= req_distinguished_name
 # your application.
 
 countryName=US
-stateOrProvinceName=NC
-localityName=Cary
+stateOrProvinceName=CA
+localityName=Sunnyvale
 organizationName=Real Time Innovations
 emailAddress=appname@rti.com
 commonName=appname

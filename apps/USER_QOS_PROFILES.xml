@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!-- 
+ (c) Copyright, Real-Time Innovations, 2012-2016.
+ All rights reserved.
+ No duplications, whole or partial, manual or electronic, may be made
+ without express written permission.  Any such copies, or
+ revisions thereof, must display this notice unaltered.
+ This code contains trade secrets of Real-Time Innovations, Inc.
+
+Description:
+This file defines the default QoS profiles that the rtishapesdemo will use.
+
+For more information about XML QoS Profiles see Chapter 15 in the 
+RTI Data Distribution Service user manual.
+-->
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="http://community.rti.com/schema/6.0.1/rti_dds_qos_profiles.xsd">
+    <qos_library name="SecureDemo">
+
+        <qos_profile name="Secure-app1limited" base_name="BuiltinQosLib::Generic.Security">
+            <participant_qos>
+                <participant_name>
+                    <name>Secure app1limited</name>
+                    <role_name>app1limited</role_name>
+                </participant_name>
+                <transport_builtin>
+                    <mask>UDPv4</mask>
+                </transport_builtin>
+                <property>
+                    <value>
+                        <!-- logging options -->
+                        <element>
+                            <name>com.rti.serv.secure.logging.verbosity</name>
+                            <value>INFORMATIONAL</value>
+                        </element>
+                        <element>
+                            <name>com.rti.serv.secure.logging.log_file</name>
+                            <value>C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\app1limited\app1.secure.log.txt</value>
+                        </element>
+                        <element>
+                            <name>com.rti.serv.secure.logging.distribute.enable</name>
+                            <value>true</value>
+                        </element>
+                        <!-- common files -->
+                        <element>
+                            <name>dds.sec.auth.identity_ca</name>
+                            <value>file:C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\deployall\identcacert.pem</value>
+                        </element>
+                        <element>
+                            <name>dds.sec.access.permissions_ca</name>
+                            <value>file:C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\deployall\permcacert.pem</value>
+                        </element>
+                        <element>
+                            <name>dds.sec.access.governance</name>
+                            <value>file:C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\deployall\demo_governance_signed.p7s</value>
+                        </element>
+                        <!-- application specific files -->
+                        <element>
+                            <name>dds.sec.auth.identity_certificate</name>
+                            <value>file:C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\app1limited\deploy\app1limitedidentcert.pem</value>
+                        </element>
+                        <element>
+                            <name>dds.sec.auth.private_key</name>
+                            <value>file:C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\app1limited\deploy\app1limitedpriv.pem</value>
+                        </element>
+                        <element>
+                            <name>dds.sec.access.permissions</name>
+                            <value>file:C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\app1limited\deploy\app1limited_permissions_signed.p7s</value>
+                        </element>
+                    </value>
+                </property>
+                <discovery_config>
+                    <default_domain_announcement_period>
+                        <sec>DURATION_INFINITE_SEC</sec>
+                        <nanosec>DURATION_INFINITE_NSEC</nanosec>
+                    </default_domain_announcement_period>
+                </discovery_config>
+            </participant_qos>
+            <datareader_qos>
+                <history>
+                    <kind>KEEP_LAST_HISTORY_QOS</kind>
+                    <depth>10</depth>
+                </history>
+            </datareader_qos>
+        </qos_profile>
+
+        <qos_profile name="Secure-app2fullperm" base_name="BuiltinQosLib::Generic.Security">
+            <participant_qos>
+                <participant_name>
+                    <name>Secure app2fullperm</name>
+                    <role_name>app2fullperm</role_name>
+                </participant_name>
+                <transport_builtin>
+                    <mask>UDPv4</mask>
+                </transport_builtin>
+                <property>
+                    <value>
+                        <!-- logging options -->
+                        <element>
+                            <name>com.rti.serv.secure.logging.verbosity</name>
+                            <value>INFORMATIONAL</value>
+                        </element>
+                        <element>
+                            <name>com.rti.serv.secure.logging.log_file</name>
+                            <value>C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\app2fullperm\app2.secure.log.txt</value>
+                        </element>
+                        <element>
+                            <name>com.rti.serv.secure.logging.distribute.enable</name>
+                            <value>true</value>
+                        </element>
+                        <!-- common files -->
+                        <element>
+                            <name>dds.sec.auth.identity_ca</name>
+                            <value>file:C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\deployall\identcacert.pem</value>
+                        </element>
+                        <element>
+                            <name>dds.sec.access.permissions_ca</name>
+                            <value>file:C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\deployall\permcacert.pem</value>
+                        </element>
+                        <element>
+                            <name>dds.sec.access.governance</name>
+                            <value>file:C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\deployall\demo_governance_signed.p7s</value>
+                        </element>
+                        <!-- application specific files -->
+                        <element>
+                            <name>dds.sec.auth.identity_certificate</name>
+                            <value>file:C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\app2fullperm\deploy\app2fullpermidentcert.pem</value>
+                        </element>
+                        <element>
+                            <name>dds.sec.auth.private_key</name>
+                            <value>file:C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\app2fullperm\deploy\app2fullpermpriv.pem</value>
+                        </element>
+                        <element>
+                            <name>dds.sec.access.permissions</name>
+                            <value>file:C:\Users\ross\Documents\rti_workspace\6.0.1\dds_secure_workbook\apps\app2fullperm\deploy\app2fullperm_permissions_signed.p7s</value>
+                        </element>
+                    </value>
+                </property>
+                <discovery_config>
+                    <default_domain_announcement_period>
+                        <sec>DURATION_INFINITE_SEC</sec>
+                        <nanosec>DURATION_INFINITE_NSEC</nanosec>
+                    </default_domain_announcement_period>
+                </discovery_config>
+            </participant_qos>
+            <datareader_qos>
+                <history>
+                    <kind>KEEP_LAST_HISTORY_QOS</kind>
+                    <depth>10</depth>
+                </history>
+            </datareader_qos>
+        </qos_profile>
+</dds>

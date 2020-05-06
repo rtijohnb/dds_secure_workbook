@@ -1,7 +1,7 @@
 #
 # OpenSSL example Certificate Authority configuration file.
 
-HOME=/Users/johnb/Projects/Demos/galleon/security/ca/permissions
+HOME=
 
 ####################################################################
 [ ca ]
@@ -103,7 +103,7 @@ localityName            = Sunnyvale
 
 #commonName             = Common Name (eg, YOUR name)
 #commonName_max         = 64
-commonName              = RTI Cert World
+commonName              = PermissionsCADemo
 
 #emailAddress           = Email Address
 #emailAddress_max       = 64
