@@ -1,0 +1,96 @@
+MIME-Version: 1.0
+Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----38E645D0CB95CDC4FA480AE56B83A36C"
+
+This is an S/MIME signed message
+
+------38E645D0CB95CDC4FA480AE56B83A36C
+Content-Type: text/plain
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="/Applications/rti_connext_dds-5.3.1/resource/schema/dds_security_permissions.xsd">
+
+    <permissions>
+
+        <grant name="triwriterPermissions">
+
+            <!-- TODO: Change the fields below to match those in your appname.cnf file.  Change 'demo_app' to your app's name -->
+            <subject_name>/C=US/ST=NC/O=Real Time Innovations/CN=triwriter/emailAddress=triwriter@rti.com</subject_name>
+
+            <validity>
+                <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+                <not_before>2013-06-01T13:00:00</not_before>
+                <not_after>2033-06-01T13:00:00</not_after>
+            </validity>
+
+            <!-- Domains 0-49 carries no read or write restrictions on any topics -->
+            <allow_rule>
+                <domains>
+                    <id_range>
+                        <min>0</min>
+                        <max>6</max>
+                    </id_range>
+                </domains>
+                <publish>
+                    <topics>
+                        <topic>*</topic>
+                    </topics>
+                </publish>
+                <subscribe>
+                    <topics>
+                        <topic>*</topic>
+                    </topics>
+                </subscribe>
+            </allow_rule>
+
+            <default>DENY</default>
+
+        </grant>
+    </permissions>
+</dds>
+
+------38E645D0CB95CDC4FA480AE56B83A36C
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+
+MIIGlgYJKoZIhvcNAQcCoIIGhzCCBoMCAQExDzANBglghkgBZQMEAgEFADALBgkq
+hkiG9w0BBwGgggOjMIIDnzCCAocCFDhPM+3ci6fNjFv5zP13Sd10JVRhMA0GCSqG
+SIb3DQEBCwUAMIGLMQswCQYDVQQGEwJVUzELMAkGA1UECAwCQ0ExEjAQBgNVBAcM
+CVN1bm55dmFsZTEeMBwGA1UECgwVUmVhbCBUaW1lIElubm92YXRpb25zMRcwFQYD
+VQQDDA5SVEkgQ2VydCBXb3JsZDEiMCAGCSqGSIb3DQEJARYTcGVybWlzc2lvbnNA
+cnRpLmNvbTAeFw0yMDA1MTcyMjEwMjlaFw0zMDA1MTUyMjEwMjlaMIGLMQswCQYD
+VQQGEwJVUzELMAkGA1UECAwCQ0ExEjAQBgNVBAcMCVN1bm55dmFsZTEeMBwGA1UE
+CgwVUmVhbCBUaW1lIElubm92YXRpb25zMRcwFQYDVQQDDA5SVEkgQ2VydCBXb3Js
+ZDEiMCAGCSqGSIb3DQEJARYTcGVybWlzc2lvbnNAcnRpLmNvbTCCASIwDQYJKoZI
+hvcNAQEBBQADggEPADCCAQoCggEBAMWSjcqIZ6V7eKB13L0ox7ZuhzWBThSsX7Zt
+SnnlkweUzNIHyHwTtZlYQtLcLfO2eCOgU4HclDUPJpG+qPJIMkRF4TmCj/ctDPOx
+VLJ2F2mFNquCiVfwC0rEdjSeS3/Zh3RmTZzGice8kBdmHLUoZFbA5jZrRI3R4D1f
+AdYF2bKr/rFPfLIxe1wGc3IZbFpdWdjEiNzz3YtHNEmcWTkpdaef+1+1tzlVkvUM
++QOxif2McG4FwPuzReXJSU7n+Qa3Fi4XsHmKBbvQwCAdFtJmL562jmH3PVX/XFTi
+8EZXFb36uP9OCbNbwWOOtbeOty0K/rqsKYj9yYpT9BsdwE/D79kCAwEAATANBgkq
+hkiG9w0BAQsFAAOCAQEAHOjpHdlJhLoOYgsFBRq/TKEdQ8VIjeSF1IlfK2Odh/EP
+1I3eBOYh/jXM+YwkPZgeDZAqUdKaa4dF2LzY6hPtbMby4C6bGgOfXtAwHU6c4Gqc
+XjzBqvzYHk25H5t5sTFhDCq27xf6uKagvHTJdSp+KVR2cLvxvy4B1Oy1+yENSZn3
+HRZmGeUGFOO2ZCjTAdT5FZEe84U3w17FfWlaeM8P4yIG4XNE484W7E/kothSZaU/
+tf/FtAQ8Nd+25KEjkjffltFxw5gxSbrkuWXyIN19MUyAmAguOoH/8CpJaNabls9K
+gczVK6is1KCT2kE6hxZAHy0qHcRudiurRzpSPBmeyjGCArcwggKzAgEBMIGkMIGL
+MQswCQYDVQQGEwJVUzELMAkGA1UECAwCQ0ExEjAQBgNVBAcMCVN1bm55dmFsZTEe
+MBwGA1UECgwVUmVhbCBUaW1lIElubm92YXRpb25zMRcwFQYDVQQDDA5SVEkgQ2Vy
+dCBXb3JsZDEiMCAGCSqGSIb3DQEJARYTcGVybWlzc2lvbnNAcnRpLmNvbQIUOE8z
+7dyLp82MW/nM/XdJ3XQlVGEwDQYJYIZIAWUDBAIBBQCggeQwGAYJKoZIhvcNAQkD
+MQsGCSqGSIb3DQEHATAcBgkqhkiG9w0BCQUxDxcNMjAwNTE3MjIxMjQ3WjAvBgkq
+hkiG9w0BCQQxIgQgsjrV2oM8iXBvqPkQuCTRtw0fH4SCcmfTcevTQS0tMCUweQYJ
+KoZIhvcNAQkPMWwwajALBglghkgBZQMEASowCwYJYIZIAWUDBAEWMAsGCWCGSAFl
+AwQBAjAKBggqhkiG9w0DBzAOBggqhkiG9w0DAgICAIAwDQYIKoZIhvcNAwICAUAw
+BwYFKw4DAgcwDQYIKoZIhvcNAwICASgwDQYJKoZIhvcNAQEBBQAEggEAJVDU+y3Y
+4GHa+m6nC+fF/TqrDBN6w7mkLIaJTGo4cOLPnv0z8v7pvmU9Vusc9ZbXRkaFzeMK
+wYORbDooupFWJfc3Nj07aytfer6Qf6x/NiaGOp3JrmV9rAMDLzLnNyzHz+hDWMH8
++SwTsL5+b6BJyiEyJYnfBr4mY4IT5DfXNI+payFfylZYSXnd5A98w8FQp0938hBM
+zUAryeu+v87mG/iY/MNXc1/9pE9WuOa/+G1UpFkEurM3HueV7t1qX1S4T0ZTFmuc
+dNYcQNb4mvE2quzYmFdd7ii7Z8QRJZ1vEu8Sh8sVf/u2kfR05MWsJWvVKgDxmuwE
+36unwuX4B5zTYQ==
+
+------38E645D0CB95CDC4FA480AE56B83A36C--
+
