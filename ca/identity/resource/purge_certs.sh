@@ -16,6 +16,7 @@ rm -f ${DDS_SECURE_DEMO_HOME}/ca/identity/certs/*
 rm -f ${DDS_SECURE_DEMO_HOME}/ca/identity/CertificateDatabase
 rm -f ${DDS_SECURE_DEMO_HOME}/ca/identity/CertificateDatabaseIndex.*
 rm -f ${DDS_SECURE_DEMO_HOME}/ca/identity/*.old
+rm -f ${DDS_SECURE_DEMO_HOME}/ca/identity/*.attr
 echo "  Initializing certificate database"
 cp ${DDS_SECURE_DEMO_HOME}/ca/identity/resource/CertificateDatabase ${DDS_SECURE_DEMO_HOME}/ca/identity
 cp ${DDS_SECURE_DEMO_HOME}/ca/identity/resource/CertificateDatabaseIndex.txt ${DDS_SECURE_DEMO_HOME}/ca/identity

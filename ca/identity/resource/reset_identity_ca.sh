@@ -22,6 +22,7 @@ rm -f ${DDS_SECURE_DEMO_HOME}/ca/identity/*.csr
 rm -f ${DDS_SECURE_DEMO_HOME}/ca/identity/*.pem
 rm -f ${DDS_SECURE_DEMO_HOME}/ca/identity/*.cnf
 rm -f ${DDS_SECURE_DEMO_HOME}/ca/identity/*.old
+rm -f ${DDS_SECURE_DEMO_HOME}/ca/identity/*.attr
 echo "  Removing private key"
 rm -f ${DDS_SECURE_DEMO_HOME}/ca/identity/private/*
 echo "  Initializing certificate database"
