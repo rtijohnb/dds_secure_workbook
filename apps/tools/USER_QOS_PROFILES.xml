@@ -44,12 +44,14 @@
                         <element>239.255.0.1</element>
                     </multicast_receive_addresses>
                 </discovery>
+                <!--
                 <discovery_config>
                     <default_domain_announcement_period>
                         <sec>DURATION_INFINITE_SEC</sec>
                         <nanosec>DURATION_INFINITE_NSEC</nanosec>
                     </default_domain_announcement_period>
                 </discovery_config>
+                -->
                 <resource_limits>
                     <type_code_max_serialized_length>16384</type_code_max_serialized_length>
                     <type_object_max_serialized_length>16384</type_object_max_serialized_length>
