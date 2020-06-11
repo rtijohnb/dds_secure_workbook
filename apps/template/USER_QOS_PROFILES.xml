@@ -87,7 +87,7 @@
                         <!-- TODO: Set the location for the security logging file -->
                         <element>
                             <name>com.rti.serv.secure.logging.log_file</name>
-                            <value>$(DDS_SECURE_DEMO_HOME)/apps/demo_app/deploy/demo_app_secure_log.txt</value>
+                            <value>$(DDS_SECURE_DEMO_HOME)/apps/demo_app/demo_app_secure_log.txt</value>
                         </element>
                         <!-- TODO: If you'd like to receive Security log messages at a remote location -->
                         <!-- TODO: set the property below to true.  The log messages will then be published -->
@@ -139,67 +139,5 @@
                 </property>
             </participant_qos>
         </qos_profile>
-
-        <!-- TODO: Use the profile below as a template for setting up profiles -->
-        <!-- TODO: for the data flows in your system.  Typically, it's a good -->
-        <!-- TODO: idea to create matching writer and reader QoS settings in -->
-        <!-- TODO: a single profile. In a typical application, you might have -->
-        <!-- TODO: anywhere from 3-12 individual data flow profiles -->
-
-        <qos_profile name="DataFlow1" base_name="BuiltinQosLib::Generic.Common" is_default_qos="false">
-
-            <datawriter_qos>
-                <publication_name>
-                    <name>TopicnameWriter</name>
-                    <role_name>TopicnameWriter</role_name>
-                </publication_name>
-
-                <history>
-                    <kind>KEEP_LAST_HISTORY_QOS</kind>
-                    <depth>6</depth>
-                </history>
-
-                <reliability>
-                    <kind>RELIABLE_RELIABILITY_QOS</kind>
-                    <max_blocking_time>
-                        <sec>1</sec>
-                        <nanosec>0</nanosec>
-                    </max_blocking_time>
-                </reliability>
-
-                <lifespan>
-                    <duration>
-                        <sec>5</sec>
-                        <nanosec>0</nanosec>
-                    </duration>
-                </lifespan>
-            </datawriter_qos>
-
-            <datareader_qos>
-                <subscription_name>
-                    <name>TopicnameReader</name>
-                    <role_name>TopicnameReader</role_name>
-                </subscription_name>
-
-                <!-- TODO: If you are fanning data out to many receivers, -->
-                <!-- TODO: you can specify a shared multicast receive -->
-                <!-- TODO: address for all data readers of the same topic. -->
-
-                <!--
-                <multicast>
-                    <value>
-                        <element>
-                            <receive_address>239.255.1.1</receive_address>
-                        </element>
-                    </value>
-                </multicast>
-                -->
-                <history>
-                    <kind>KEEP_LAST_HISTORY_QOS</kind>
-                    <depth>6</depth>
-                </history>
-            </datareader_qos>
-        </qos_profile>
-
     </qos_library>
 </dds>

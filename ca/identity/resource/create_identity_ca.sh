@@ -23,13 +23,13 @@ echo ""
 echo "Creating a new Identity CA for self-signing certs:"
 echo ""
 echo "  Generating private key: ./private/cakey.pem"
-openssl genrsa -out ./private/cakey.pem 2048
+openssl req -new -sha256 -key ./private/cakey.pem -out ca.csr -config openssl.cnf
 
 echo "  Generating Certificate Signing Request: ca.csr"
-openssl req -new -key ./private/cakey.pem -out ca.csr -config openssl.cnf
+openssl req -new -sha256 -key ./private/cakey.pem -out ca.csr -config openssl.cnf
 
 echo "  Generating and self-signing the CA certificate"
-openssl x509 -req -days 3650 -in ca.csr -signkey ./private/cakey.pem -out cacert.pem
+openssl x509 -req -sha256 -days 3650 -in ca.csr -text -signkey ./private/cakey.pem -out cacert.pem
 
 echo "  Deploying CA's public certificate to ${DDS_SECURE_DEMO_HOME}/app/deployall"
 cp cacert.pem ${DDS_SECURE_DEMO_HOME}/apps/deployall

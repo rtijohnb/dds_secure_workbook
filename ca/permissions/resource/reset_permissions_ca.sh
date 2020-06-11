@@ -14,19 +14,11 @@ fi
 echo ""
 echo "Reseting the Permissions CA:"
 echo "  Purging all previously generated CA files"
-rm -f ${DDS_SECURE_DEMO_HOME}/ca/permissions/certs/*
-rm -f ${DDS_SECURE_DEMO_HOME}/ca/permissions/PermissionsDatabase
-rm -f ${DDS_SECURE_DEMO_HOME}/ca/permissions/PermissionsDatabaseIndex.*
 rm -f ${DDS_SECURE_DEMO_HOME}/ca/permissions/*.csr
 rm -f ${DDS_SECURE_DEMO_HOME}/ca/permissions/*.pem
 rm -f ${DDS_SECURE_DEMO_HOME}/ca/permissions/*.cnf
-rm -f ${DDS_SECURE_DEMO_HOME}/ca/permissions/*.old
 echo "  Removing private key"
 rm -f ${DDS_SECURE_DEMO_HOME}/ca/permissions/private/*
-echo "  Initializing certificate database"
-cp ${DDS_SECURE_DEMO_HOME}/ca/permissions/resource/PermissionsDatabase ${DDS_SECURE_DEMO_HOME}/ca/permissions/
-cp ${DDS_SECURE_DEMO_HOME}/ca/permissions/resource/PermissionsDatabaseIndex.txt ${DDS_SECURE_DEMO_HOME}/ca/permissions/
 echo "  Resetting OpenSSL configuration"
 cp ${DDS_SECURE_DEMO_HOME}/ca/permissions/resource/openssl.cnf ${DDS_SECURE_DEMO_HOME}/ca/permissions/
 echo ""
-
