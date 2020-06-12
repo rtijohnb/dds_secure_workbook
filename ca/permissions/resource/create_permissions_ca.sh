@@ -30,10 +30,11 @@ openssl req -new -sha256 -key private/permissionscakey.pem -out ca.csr -config o
 
 echo "  Generating and self-signing the Permissions CA certificate"
 openssl x509 -req -sha256 -days 3650 -in ca.csr -text -signkey private/permissionscakey.pem -out permissionscacert.pem
+echo ""
 
 echo "  Deploying Permissions CA's public certificate to ${DDS_SECURE_DEMO_HOME}/app/deployall"
 cp permissionscacert.pem ${DDS_SECURE_DEMO_HOME}/apps/deployall
-echo ""
 
 echo "  Removing the ca.csr file that is no longer needed now that the permissions ca is signed"
 rm ca.csr
+echo ""
