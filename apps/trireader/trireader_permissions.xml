@@ -21,7 +21,7 @@
                 <domains>
                     <id_range>
                         <min>0</min>
-                        <max>7</max>
+                        <max>6</max>
                     </id_range>
                 </domains>
                 <publish>
