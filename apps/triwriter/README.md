@@ -5,6 +5,8 @@ To use the files in this template directory:
 cd ..
 cp -R template myapp
 
+Where "myapp" is your application's name.
+
 2. Change to the new directory:
 
 cd myapp
@@ -12,8 +14,6 @@ cd myapp
 3. Rename the OpenSSL configuration file to something that matches your app name:
 
 mv appname.cnf myapp.cnf
-
-Where "myapp" is your application's name.
 
 4. Edit the <myapp>.cnf file and change the fields within it per the comments.
 5. Edit the create_identity.sh file and change the string "demo_app" to your application name.

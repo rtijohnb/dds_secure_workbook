@@ -8,7 +8,7 @@
         <grant name="trireaderPermissions">
 
             <!-- TODO: Change the fields below to match those in your appname.cnf file.  Change 'demo_app' to your app's name -->
-            <subject_name>/C=US/ST=NC/O=Real Time Innovations/CN=trireader/emailAddress=trireader@rti.com</subject_name>
+            <subject_name>/C=US/ST=CA/O=Real Time Innovations/CN=trireader/emailAddress=trireader@rti.com</subject_name>
 
             <validity>
                 <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
@@ -21,7 +21,7 @@
                 <domains>
                     <id_range>
                         <min>0</min>
-                        <max>7</max>
+                        <max>6</max>
                     </id_range>
                 </domains>
                 <publish>
