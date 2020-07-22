@@ -1,9 +1,9 @@
 MIME-Version: 1.0
-Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----D63E2DBA00ECA01ACA594DE7C2ED6C61"
+Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----F1EE0673726846DFDBE6FC895E982676"
 
 This is an S/MIME signed message
 
-------D63E2DBA00ECA01ACA594DE7C2ED6C61
+------F1EE0673726846DFDBE6FC895E982676
 Content-Type: text/plain
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -13,7 +13,7 @@ Content-Type: text/plain
 
     <permissions>
 
-        <grant name="demo_appPermissions">
+        <grant name="toolsPermissions">
 
             <!-- TODO: Change the fields below to match those in your appname.cnf file.  Change 'demo_app' to your app's name -->
             <subject_name>/C=US/ST=CA/O=Real Time Innovations/CN=tools/emailAddress=tools@rti.com</subject_name>
@@ -43,37 +43,13 @@ Content-Type: text/plain
                 </subscribe>
             </allow_rule>
 
-            <deny_rule>
-                <domains>
-                    <id_range>
-                        <min>0</min>
-                        <max>6</max>
-                    </id_range>
-                </domains>
-
-                <publish>
-                    <topics>
-                        <topic>secure_topic_this_app_can_NOT_write</topic>
-                        <topic>secure_topic_this_app_can_NOT_write</topic>
-                    </topics>
-                </publish>
-
-                <subscribe>
-                    <topics>
-                        <topic>secure_topic_this_app_can_NOT_read</topic>
-                        <topic>secure_topic_this_app_can_NOT_read</topic>
-                    </topics>
-                </subscribe>
-
-            </deny_rule>
-
             <default>DENY</default>
 
         </grant>
     </permissions>
 </dds>
 
-------D63E2DBA00ECA01ACA594DE7C2ED6C61
+------F1EE0673726846DFDBE6FC895E982676
 Content-Type: application/x-pkcs7-signature; name="smime.p7s"
 Content-Transfer-Encoding: base64
 Content-Disposition: attachment; filename="smime.p7s"
@@ -95,12 +71,12 @@ CzAJBgNVBAgMAkNBMRIwEAYDVQQHDAlTdW5ueXZhbGUxHjAcBgNVBAoMFVJlYWwg
 VGltZSBJbm5vdmF0aW9uczEXMBUGA1UEAwwOUlRJIENlcnQgV29ybGQxIjAgBgkq
 hkiG9w0BCQEWE3Blcm1pc3Npb25zQHJ0aS5jb20CFBBWYYm0p27La35Z5OL0H02x
 TFL9MA0GCWCGSAFlAwQCAQUAoIHkMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEw
-HAYJKoZIhvcNAQkFMQ8XDTIwMDYxNTIwNTYyNVowLwYJKoZIhvcNAQkEMSIEIPHy
-lYvAQjmWXXIngEeDr42YKQUnEWNw50eniRGjuuL/MHkGCSqGSIb3DQEJDzFsMGow
+HAYJKoZIhvcNAQkFMQ8XDTIwMDcyMjIwMjgwN1owLwYJKoZIhvcNAQkEMSIEIJbS
+qg42N41azaK8kZwS8VdJwm+M1rfzPoxCHI3argUeMHkGCSqGSIb3DQEJDzFsMGow
 CwYJYIZIAWUDBAEqMAsGCWCGSAFlAwQBFjALBglghkgBZQMEAQIwCgYIKoZIhvcN
 AwcwDgYIKoZIhvcNAwICAgCAMA0GCCqGSIb3DQMCAgFAMAcGBSsOAwIHMA0GCCqG
-SIb3DQMCAgEoMAoGCCqGSM49BAMCBEcwRQIgFlQqhtxAe4d+FImKI7eXp7+pZ2BC
-Tp3A//MGauBYEcECIQDsLroeEE3j/bm7MublhskhWHBXFkIfzitPfFGds8xGqA==
+SIb3DQMCAgEoMAoGCCqGSM49BAMCBEcwRQIhAO6Pnnz2lR4I+OUG2xqtObEKsZDA
+QWDYNqoVjMiY1nnKAiBV8OyT2nJKrYFY7RF7uGEMZJv7SMnEUez2FFCuoTj5Dg==
 
-------D63E2DBA00ECA01ACA594DE7C2ED6C61--
+------F1EE0673726846DFDBE6FC895E982676--
 

@@ -1,9 +1,9 @@
 MIME-Version: 1.0
-Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----A12FB648AAF083EFA49A5ACBC1FFFE93"
+Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----B6A4203C06F9D8D9394D468D49DF936D"
 
 This is an S/MIME signed message
 
-------A12FB648AAF083EFA49A5ACBC1FFFE93
+------B6A4203C06F9D8D9394D468D49DF936D
 Content-Type: text/plain
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -219,6 +219,7 @@ Content-Type: text/plain
                     <data_protection_kind>NONE</data_protection_kind>
                 </topic_rule>
             </topic_access_rules>
+        </domain_rule>  
 
         <domain_rule> <!-- Triangle topic metadata is now encrypted -->
             <domains> <!-- "Triangle" topic name is not detected in wireshark anymore, packets contain SEC_PREFIX SEC_BODY and SEC_POSTFIX -->
@@ -313,12 +314,12 @@ Content-Type: text/plain
     </domain_access_rules>
 </dds>
 
-------A12FB648AAF083EFA49A5ACBC1FFFE93
+------B6A4203C06F9D8D9394D468D49DF936D
 Content-Type: application/x-pkcs7-signature; name="smime.p7s"
 Content-Transfer-Encoding: base64
 Content-Disposition: attachment; filename="smime.p7s"
 
-MIIESgYJKoZIhvcNAQcCoIIEOzCCBDcCAQExDzANBglghkgBZQMEAgEFADALBgkq
+MIIESQYJKoZIhvcNAQcCoIIEOjCCBDYCAQExDzANBglghkgBZQMEAgEFADALBgkq
 hkiG9w0BBwGgggIVMIICETCCAbYCFBBWYYm0p27La35Z5OL0H02xTFL9MAoGCCqG
 SM49BAMCMIGLMQswCQYDVQQGEwJVUzELMAkGA1UECAwCQ0ExEjAQBgNVBAcMCVN1
 bm55dmFsZTEeMBwGA1UECgwVUmVhbCBUaW1lIElubm92YXRpb25zMRcwFQYDVQQD
@@ -330,17 +331,17 @@ MCAGCSqGSIb3DQEJARYTcGVybWlzc2lvbnNAcnRpLmNvbTBWMBAGByqGSM49AgEG
 BSuBBAAKA0IABDKHu04yVzJI0DspZCIy6tUq7lpMTY3gr271bDQ3GpRnOfI5wpRe
 Ai9WzGmyrlZ/v1k9J65ZPVHriaHJspnGfSQwCgYIKoZIzj0EAwIDSQAwRgIhAOD+
 l9Ee9aqimQ9cSsndwoxmKWdKjWxMz0rlcx/LLgWMAiEAheA53ndWPbYsIKbM0a4r
-ISPvyTmOtIZzzr6FOWUxnPQxggH5MIIB9QIBATCBpDCBizELMAkGA1UEBhMCVVMx
+ISPvyTmOtIZzzr6FOWUxnPQxggH4MIIB9AIBATCBpDCBizELMAkGA1UEBhMCVVMx
 CzAJBgNVBAgMAkNBMRIwEAYDVQQHDAlTdW5ueXZhbGUxHjAcBgNVBAoMFVJlYWwg
 VGltZSBJbm5vdmF0aW9uczEXMBUGA1UEAwwOUlRJIENlcnQgV29ybGQxIjAgBgkq
 hkiG9w0BCQEWE3Blcm1pc3Npb25zQHJ0aS5jb20CFBBWYYm0p27La35Z5OL0H02x
 TFL9MA0GCWCGSAFlAwQCAQUAoIHkMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEw
-HAYJKoZIhvcNAQkFMQ8XDTIwMDYxNTIwNTE1NlowLwYJKoZIhvcNAQkEMSIEIPqG
-etuCxJFdFwEWV2MnFBT+JZnmShBnCPq/fhqV4LiEMHkGCSqGSIb3DQEJDzFsMGow
+HAYJKoZIhvcNAQkFMQ8XDTIwMDcyMjIwMDUyMFowLwYJKoZIhvcNAQkEMSIEIDYc
+m6M8e45BCiCB+NQgdZZkn4HXEJQ4usTGvniJrI6FMHkGCSqGSIb3DQEJDzFsMGow
 CwYJYIZIAWUDBAEqMAsGCWCGSAFlAwQBFjALBglghkgBZQMEAQIwCgYIKoZIhvcN
 AwcwDgYIKoZIhvcNAwICAgCAMA0GCCqGSIb3DQMCAgFAMAcGBSsOAwIHMA0GCCqG
-SIb3DQMCAgEoMAoGCCqGSM49BAMCBEcwRQIhAMEF9IMmChG12iyzsK/AKc2pF7Ot
-m87C82GeuVU6mS/NAiAnmyiSlgBRY7UvIQyhSgPfKrxyKWDtDnpo+S/PoTleZw==
+SIb3DQMCAgEoMAoGCCqGSM49BAMCBEYwRAIgXumr+6lCu8BbiyKfuilRMYWQ3c/L
+L2YPM3XNEflTFsMCIBD2OZOswILb7Q5hmdsjqQxfrA/Tuf4Q2HpILw9EfqwR
 
-------A12FB648AAF083EFA49A5ACBC1FFFE93--
+------B6A4203C06F9D8D9394D468D49DF936D--
 
