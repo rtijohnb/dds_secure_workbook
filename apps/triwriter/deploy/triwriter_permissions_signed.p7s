@@ -1,9 +1,9 @@
 MIME-Version: 1.0
-Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----BE18C68ACDEEB41E6C5CF4756826BA10"
+Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----176E1CEA6B9EAFCE1EF70F5086ACF444"
 
 This is an S/MIME signed message
 
-------BE18C68ACDEEB41E6C5CF4756826BA10
+------176E1CEA6B9EAFCE1EF70F5086ACF444
 Content-Type: text/plain
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -24,7 +24,6 @@ Content-Type: text/plain
                 <not_after>2033-06-01T13:00:00</not_after>
             </validity>
 
-            <!-- Domains 0-49 carries no read or write restrictions on any topics -->
             <allow_rule>
                 <domains>
                     <id_range>
@@ -33,11 +32,17 @@ Content-Type: text/plain
                     </id_range>
                 </domains>
                 <publish>
+                    <partitions>
+                        <partition>*</partition>
+                    </partitions>
                     <topics>
                         <topic>*</topic>
                     </topics>
                 </publish>
                 <subscribe>
+                    <partitions>
+                        <partition>*</partition>
+                    </partitions>
                     <topics>
                         <topic>*</topic>
                     </topics>
@@ -50,12 +55,12 @@ Content-Type: text/plain
     </permissions>
 </dds>
 
-------BE18C68ACDEEB41E6C5CF4756826BA10
+------176E1CEA6B9EAFCE1EF70F5086ACF444
 Content-Type: application/x-pkcs7-signature; name="smime.p7s"
 Content-Transfer-Encoding: base64
 Content-Disposition: attachment; filename="smime.p7s"
 
-MIIESgYJKoZIhvcNAQcCoIIEOzCCBDcCAQExDzANBglghkgBZQMEAgEFADALBgkq
+MIIESQYJKoZIhvcNAQcCoIIEOjCCBDYCAQExDzANBglghkgBZQMEAgEFADALBgkq
 hkiG9w0BBwGgggIVMIICETCCAbYCFBBWYYm0p27La35Z5OL0H02xTFL9MAoGCCqG
 SM49BAMCMIGLMQswCQYDVQQGEwJVUzELMAkGA1UECAwCQ0ExEjAQBgNVBAcMCVN1
 bm55dmFsZTEeMBwGA1UECgwVUmVhbCBUaW1lIElubm92YXRpb25zMRcwFQYDVQQD
@@ -67,17 +72,17 @@ MCAGCSqGSIb3DQEJARYTcGVybWlzc2lvbnNAcnRpLmNvbTBWMBAGByqGSM49AgEG
 BSuBBAAKA0IABDKHu04yVzJI0DspZCIy6tUq7lpMTY3gr271bDQ3GpRnOfI5wpRe
 Ai9WzGmyrlZ/v1k9J65ZPVHriaHJspnGfSQwCgYIKoZIzj0EAwIDSQAwRgIhAOD+
 l9Ee9aqimQ9cSsndwoxmKWdKjWxMz0rlcx/LLgWMAiEAheA53ndWPbYsIKbM0a4r
-ISPvyTmOtIZzzr6FOWUxnPQxggH5MIIB9QIBATCBpDCBizELMAkGA1UEBhMCVVMx
+ISPvyTmOtIZzzr6FOWUxnPQxggH4MIIB9AIBATCBpDCBizELMAkGA1UEBhMCVVMx
 CzAJBgNVBAgMAkNBMRIwEAYDVQQHDAlTdW5ueXZhbGUxHjAcBgNVBAoMFVJlYWwg
 VGltZSBJbm5vdmF0aW9uczEXMBUGA1UEAwwOUlRJIENlcnQgV29ybGQxIjAgBgkq
 hkiG9w0BCQEWE3Blcm1pc3Npb25zQHJ0aS5jb20CFBBWYYm0p27La35Z5OL0H02x
 TFL9MA0GCWCGSAFlAwQCAQUAoIHkMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEw
-HAYJKoZIhvcNAQkFMQ8XDTIwMDcyMjIwMDkzMVowLwYJKoZIhvcNAQkEMSIEIKT8
-Ucs+lIGPqzcSLaLlztJJXxy0hOK6KCqbOV/16SFRMHkGCSqGSIb3DQEJDzFsMGow
+HAYJKoZIhvcNAQkFMQ8XDTIxMDUxODE3MTExNFowLwYJKoZIhvcNAQkEMSIEIL2P
+5dGaINHlnxg/rGVZPSizyGXv7POU0yncLoLuMy8RMHkGCSqGSIb3DQEJDzFsMGow
 CwYJYIZIAWUDBAEqMAsGCWCGSAFlAwQBFjALBglghkgBZQMEAQIwCgYIKoZIhvcN
 AwcwDgYIKoZIhvcNAwICAgCAMA0GCCqGSIb3DQMCAgFAMAcGBSsOAwIHMA0GCCqG
-SIb3DQMCAgEoMAoGCCqGSM49BAMCBEcwRQIhAJj5qNokA3mH33CPkilYWGBv4QAC
-BWv+NulLu49FXsd8AiBxrQDYDFdTMnFDazxDHe2OaJUzd5nWA+glT6Xr/CZpSQ==
+SIb3DQMCAgEoMAoGCCqGSM49BAMCBEYwRAIgS7DPgp48rvXwoVw3zl1e6HDmpI40
+2PbR1WNH988josQCIE2bfPR7UHeXeOdtTcXh826e/UDXpPcuuuJCys3VAv3G
 
-------BE18C68ACDEEB41E6C5CF4756826BA10--
+------176E1CEA6B9EAFCE1EF70F5086ACF444--
 
