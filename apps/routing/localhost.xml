@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-     xsi:noNamespaceSchemaLocation="http://community.rti.com/schema/6.0.1/6.0.0/rti_routing_service.xsd">
+     xsi:noNamespaceSchemaLocation="http://community.rti.com/schema/6.1.0/rti_routing_service.xsd">
 
 
     <qos_library name="SecureRouting">
@@ -8,16 +8,13 @@
             <property>
                 <value>
                         <element>
-                            <name>com.rti.serv.secure.logging.log_level</name>
-                            <value>3</value>
+                            <name>com.rti.serv.secure.logging.mode_mask</name>
+                            <value>BUILTIN | SECURITY_TOPIC</value>
                         </element>
+                        <!-- TODO: Specify the verbosity of the log messages -->
                         <element>
-                            <name>com.rti.serv.secure.logging.log_file</name>
-                            <value>$(DDS_SECURE_DEMO_HOME)/apps/routing/routing_secure_log.txt</value>
-                        </element>
-                        <element>
-                            <name>com.rti.serv.secure.logging.distribute.enable</name>
-                            <value>true</value>
+                            <name>com.rti.serv.secure.logging.verbosity</name>
+                            <value>NOTICE</value>
                         </element>
                         <element>
                             <name>com.rti.serv.secure.authentication.ca_file</name>
@@ -53,13 +50,14 @@
         <administration><domain_id>1</domain_id></administration>
 
         <domain_route name="Route" enabled="true">
+            
             <!-- Participant 0 is the non-secure domain (domain 0) -->
             <participant name="participant0">
                 <domain_id>0</domain_id>
             </participant>
 
             <!-- Participant 1 is the secured domain (domain 2) -->
-            <participant name="participant1">
+            <participant name="participant2">
                 <domain_id>2</domain_id>
                 <participant_qos base_name="SecureRouting::SecureSide"></participant_qos>
             </participant>
@@ -72,7 +70,7 @@
                         <allow_topic_name_filter>Square</allow_topic_name_filter>
                         <allow_registered_type_name_filter>ShapeType</allow_registered_type_name_filter>
                     </input>
-                    <output participant="participant1">
+                    <output participant="participant2">
                         <allow_topic_name_filter>Square</allow_topic_name_filter>
                         <allow_registered_type_name_filter>ShapeType</allow_registered_type_name_filter>
                     </output>
@@ -83,7 +81,7 @@
                         <enabled>true</enabled>
                         <max_event_delay><sec>1</sec><nanosec>0</nanosec></max_event_delay>
                     </filter_propagation>
-                    <input participant="participant1">
+                    <input participant="participant2">
                         <allow_topic_name_filter>Circle</allow_topic_name_filter>
                         <allow_registered_type_name_filter>ShapeType</allow_registered_type_name_filter>
                     </input>
@@ -104,7 +102,7 @@
                             <parameter>150</parameter>
                         </content_filter>
                     </input>
-                    <output participant="participant1">
+                    <output participant="participant2">
                         <allow_topic_name_filter>Square</allow_topic_name_filter>
                         <allow_registered_type_name_filter>ShapeType</allow_registered_type_name_filter>
                     </output>
@@ -112,7 +110,7 @@
 
                 <auto_topic_route name="CircleFilter" enabled="false">
                     <publish_with_original_info>true</publish_with_original_info> 
-                    <input participant="participant1">
+                    <input participant="participant2">
                         <allow_topic_name_filter>Circle</allow_topic_name_filter>
                         <allow_registered_type_name_filter>ShapeType</allow_registered_type_name_filter>
                         <content_filter>

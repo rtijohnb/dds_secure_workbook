@@ -29,4 +29,4 @@ mv appname.cnf myapp.cnf
 
 ./sign_permissions.sh
 
-10. Modify USER_QOS_PROFILES.xml to point to your security artifacts and the copy it to the deploy folder
+10. Modify USER_QOS_PROFILES.xml to point to your security artifacts and log file and then copy it to the deploy folder
