@@ -24,11 +24,17 @@
                     </id_range>
                 </domains>
                 <publish>
+                    <partitions>
+                        <partition>*</partition>
+                    </partitions>
                     <topics>
                         <topic>Square</topic>
                     </topics>
                 </publish>
                 <subscribe>
+                    <partitions>
+                        <partition>*</partition>
+                    </partitions>
                     <topics>
                         <topic>Circle</topic>
                     </topics>

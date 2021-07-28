@@ -1,10 +1,18 @@
 <?xml version="1.0"?>
 <dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
      xsi:noNamespaceSchemaLocation="http://community.rti.com/schema/6.1.0/rti_routing_service.xsd">
-
-
     <qos_library name="SecureRouting">
+
         <participant_qos name="SecureSide" base_name="BuiltinQosLib::Generic.Security">
+            <participant_factory_qos>
+                <logging>
+                    <verbosity>ALL</verbosity>
+                    <category>ALL</category>
+                    <print_format>MAXIMAL</print_format>
+                    <output_file>$(DDS_SECURE_DEMO_HOME)/apps/logfile.txt</output_file>
+                </logging>
+            </participant_factory_qos>
+
             <property>
                 <value>
                         <element>
@@ -43,6 +51,7 @@
                 </value>
             </property>
         </participant_qos>
+        </qos_profile>
     </qos_library>
 
     <routing_service name="example">
@@ -57,8 +66,8 @@
             </participant>
 
             <!-- Participant 1 is the secured domain (domain 2) -->
-            <participant name="participant2">
-                <domain_id>2</domain_id>
+            <participant name="participant6">
+                <domain_id>6</domain_id>
                 <participant_qos base_name="SecureRouting::SecureSide"></participant_qos>
             </participant>
 
@@ -70,7 +79,7 @@
                         <allow_topic_name_filter>Square</allow_topic_name_filter>
                         <allow_registered_type_name_filter>ShapeType</allow_registered_type_name_filter>
                     </input>
-                    <output participant="participant2">
+                    <output participant="participant6">
                         <allow_topic_name_filter>Square</allow_topic_name_filter>
                         <allow_registered_type_name_filter>ShapeType</allow_registered_type_name_filter>
                     </output>
@@ -81,7 +90,7 @@
                         <enabled>true</enabled>
                         <max_event_delay><sec>1</sec><nanosec>0</nanosec></max_event_delay>
                     </filter_propagation>
-                    <input participant="participant2">
+                    <input participant="participant6">
                         <allow_topic_name_filter>Circle</allow_topic_name_filter>
                         <allow_registered_type_name_filter>ShapeType</allow_registered_type_name_filter>
                     </input>
@@ -102,7 +111,7 @@
                             <parameter>150</parameter>
                         </content_filter>
                     </input>
-                    <output participant="participant2">
+                    <output participant="participant6">
                         <allow_topic_name_filter>Square</allow_topic_name_filter>
                         <allow_registered_type_name_filter>ShapeType</allow_registered_type_name_filter>
                     </output>
@@ -110,7 +119,7 @@
 
                 <auto_topic_route name="CircleFilter" enabled="false">
                     <publish_with_original_info>true</publish_with_original_info> 
-                    <input participant="participant2">
+                    <input participant="participant6">
                         <allow_topic_name_filter>Circle</allow_topic_name_filter>
                         <allow_registered_type_name_filter>ShapeType</allow_registered_type_name_filter>
                         <content_filter>
