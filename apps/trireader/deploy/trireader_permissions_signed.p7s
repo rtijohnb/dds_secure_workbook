@@ -1,0 +1,89 @@
+MIME-Version: 1.0
+Content-Type: multipart/signed; protocol="application/x-pkcs7-signature"; micalg="sha-256"; boundary="----D0C45929A705CD499000C9A6219E41B7"
+
+This is an S/MIME signed message
+
+------D0C45929A705CD499000C9A6219E41B7
+Content-Type: text/plain
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="/Applications/rti_connext_dds-5.3.1/resource/schema/dds_security_permissions.xsd">
+
+    <permissions>
+
+        <grant name="trireaderPermissions">
+
+            <!-- TODO: Change the fields below to match those in your appname.cnf file.  Change 'demo_app' to your app's name -->
+            <subject_name>/C=US/ST=CA/O=Real Time Innovations/CN=trireader/emailAddress=trireader@rti.com</subject_name>
+
+            <validity>
+                <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
+                <not_before>2013-06-01T13:00:00</not_before>
+                <not_after>2033-06-01T13:00:00</not_after>
+            </validity>
+
+            <allow_rule>
+                <domains>
+                    <id_range>
+                        <min>0</min>
+                        <max>6</max>
+                    </id_range>
+                </domains>
+                <publish>
+		    <partitions>
+		        <partition>*</partition>
+		    </partitions>
+                    <topics>
+                        <topic>Sq*</topic>
+                        <topic>Cir*</topic>
+                    </topics>
+                </publish>
+                <subscribe>
+		    <partitions>
+		        <partition>*</partition>
+		    </partitions>
+                    <topics>
+                        <topic>*</topic>
+                    </topics>
+                </subscribe>
+            </allow_rule>
+
+            <default>DENY</default>
+
+        </grant>
+    </permissions>
+</dds>
+
+------D0C45929A705CD499000C9A6219E41B7
+Content-Type: application/x-pkcs7-signature; name="smime.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime.p7s"
+
+MIIESwYJKoZIhvcNAQcCoIIEPDCCBDgCAQExDzANBglghkgBZQMEAgEFADALBgkq
+hkiG9w0BBwGgggIVMIICETCCAbYCFBBWYYm0p27La35Z5OL0H02xTFL9MAoGCCqG
+SM49BAMCMIGLMQswCQYDVQQGEwJVUzELMAkGA1UECAwCQ0ExEjAQBgNVBAcMCVN1
+bm55dmFsZTEeMBwGA1UECgwVUmVhbCBUaW1lIElubm92YXRpb25zMRcwFQYDVQQD
+DA5SVEkgQ2VydCBXb3JsZDEiMCAGCSqGSIb3DQEJARYTcGVybWlzc2lvbnNAcnRp
+LmNvbTAeFw0yMDA2MTUyMDQxMjhaFw0zMDA2MTMyMDQxMjhaMIGLMQswCQYDVQQG
+EwJVUzELMAkGA1UECAwCQ0ExEjAQBgNVBAcMCVN1bm55dmFsZTEeMBwGA1UECgwV
+UmVhbCBUaW1lIElubm92YXRpb25zMRcwFQYDVQQDDA5SVEkgQ2VydCBXb3JsZDEi
+MCAGCSqGSIb3DQEJARYTcGVybWlzc2lvbnNAcnRpLmNvbTBWMBAGByqGSM49AgEG
+BSuBBAAKA0IABDKHu04yVzJI0DspZCIy6tUq7lpMTY3gr271bDQ3GpRnOfI5wpRe
+Ai9WzGmyrlZ/v1k9J65ZPVHriaHJspnGfSQwCgYIKoZIzj0EAwIDSQAwRgIhAOD+
+l9Ee9aqimQ9cSsndwoxmKWdKjWxMz0rlcx/LLgWMAiEAheA53ndWPbYsIKbM0a4r
+ISPvyTmOtIZzzr6FOWUxnPQxggH6MIIB9gIBATCBpDCBizELMAkGA1UEBhMCVVMx
+CzAJBgNVBAgMAkNBMRIwEAYDVQQHDAlTdW5ueXZhbGUxHjAcBgNVBAoMFVJlYWwg
+VGltZSBJbm5vdmF0aW9uczEXMBUGA1UEAwwOUlRJIENlcnQgV29ybGQxIjAgBgkq
+hkiG9w0BCQEWE3Blcm1pc3Npb25zQHJ0aS5jb20CFBBWYYm0p27La35Z5OL0H02x
+TFL9MA0GCWCGSAFlAwQCAQUAoIHkMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwEw
+HAYJKoZIhvcNAQkFMQ8XDTIxMDUxODE3Mjg1M1owLwYJKoZIhvcNAQkEMSIEIH3K
+xOlqmv+zmKlMmBHQbA0400eRoL6YZWq9u8IOdEdbMHkGCSqGSIb3DQEJDzFsMGow
+CwYJYIZIAWUDBAEqMAsGCWCGSAFlAwQBFjALBglghkgBZQMEAQIwCgYIKoZIhvcN
+AwcwDgYIKoZIhvcNAwICAgCAMA0GCCqGSIb3DQMCAgFAMAcGBSsOAwIHMA0GCCqG
+SIb3DQMCAgEoMAoGCCqGSM49BAMCBEgwRgIhAOr2Cf8yR9XaI6NRmuk7V3fkQ+ce
+Tv98owiMMGxin+HbAiEAsQTHTxMIj42D7Th190NWeVDYLOGEoT5VBBHQ7OR65Hs=
+
+------D0C45929A705CD499000C9A6219E41B7--
+

@@ -5,10 +5,10 @@
 
     <permissions>
 
-        <grant name="demo_appPermissions">
+        <grant name="routingPermissions">
 
             <!-- TODO: Change the fields below to match those in your appname.cnf file.  Change 'demo_app' to your app's name -->
-            <subject_name>/C=US/ST=CA/O=Real Time Innovations/CN=demo_app/emailAddress=demo_app@rti.com</subject_name>
+            <subject_name>/C=US/ST=CA/O=Real Time Innovations/CN=routing/emailAddress=routing@rti.com</subject_name>
 
             <validity>
                 <!-- Format is CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm] in GMT -->
@@ -19,24 +19,18 @@
             <allow_rule>
                 <domains>
                     <id_range>
-                        <min>0</min>
+                        <min>2</min>
                         <max>6</max>
                     </id_range>
                 </domains>
                 <publish>
-                    <partitions>
-                        <partition>*</partition>
-                    </partitions>
                     <topics>
-                        <topic>*</topic>
+                        <topic>Square</topic>
                     </topics>
                 </publish>
                 <subscribe>
-                    <partitions>
-                        <partition>*</partition>
-                    </partitions>
                     <topics>
-                        <topic>*</topic>
+                        <topic>Circle</topic>
                     </topics>
                 </subscribe>
             </allow_rule>
@@ -44,28 +38,20 @@
             <deny_rule>
                 <domains>
                     <id_range>
-                        <min>0</min>
+                        <min>2</min>
                         <max>6</max>
                     </id_range>
                 </domains>
 
                 <publish>
-                    <partitions>
-                        <partition>*</partition>
-                    </partitions>
                     <topics>
-                        <topic>secure_topic_this_app_can_NOT_write</topic>
                         <topic>secure_topic_this_app_can_NOT_write</topic>
                     </topics>
                 </publish>
 
                 <subscribe>
-                    <partitions>
-                        <partition>*</partition>
-                    </partitions>
                     <topics>
-                        <topic>secure_topic_this_app_can_NOT_read</topic>
-                        <topic>secure_topic_this_app_can_NOT_read</topic>
+                        <topic>Triangle</topic>
                     </topics>
                 </subscribe>
 

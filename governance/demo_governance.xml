@@ -8,6 +8,7 @@
                 <id>0</id> <!-- Security Disabled -->
             </domains> <!-- secure libs can be used, while security is disabled -->
             <allow_unauthenticated_participants>true</allow_unauthenticated_participants>
+            
             <enable_join_access_control>false</enable_join_access_control>
             <discovery_protection_kind>NONE</discovery_protection_kind>
             <liveliness_protection_kind>NONE</liveliness_protection_kind>
@@ -210,7 +211,7 @@
                     <data_protection_kind>NONE</data_protection_kind>
                 </topic_rule>
             </topic_access_rules>
-        </domain_rule>
+        </domain_rule>  
 
         <domain_rule> <!-- Triangle topic metadata is now encrypted -->
             <domains> <!-- "Triangle" topic name is not detected in wireshark anymore, packets contain SEC_PREFIX SEC_BODY and SEC_POSTFIX -->

@@ -1,31 +1,31 @@
 <?xml version="1.0"?>
 <dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="/Applications/rti_connext_dds-6.1.0/resource/schema/rti_dds_qos_profiles.xsd"
-    version="6.1.0">
+     xsi:noNamespaceSchemaLocation="/Applications/rti_connext_dds-6.1.0/resource/schema/rti_dds_qos_profiles.xsd"
+     version="6.1.0">
 
      <!-- TODO: Do a global search and replace on "demo_app".  Replace this with -->
      <!-- TODO: the name of your application (i.e. "shapes"). -->
      <!-- TODO: Of particular importance is the paths to the various security -->
      <!-- TODO: certificates and artifacts - these must be absolute paths -->
 
-    <qos_library name="demo_appLib">
+    <qos_library name="trireaderLib">
 
-        <qos_profile name="demo_appParticipantQos" base_name="BuiltinQosLib::Generic.Security" is_default_qos="true">
+        <qos_profile name="trireaderParticipantQos" base_name="BuiltinQosLib::Generic.Security" is_default_qos="true">
 
             <participant_factory_qos>
                 <logging>
                     <verbosity>ERROR</verbosity>
                     <category>ALL</category>
                     <print_format>VERBOSE</print_format>
-                    <output_file>$(DDS_SECURE_DEMO_HOME)/apps/demo_app/deploy/demo_app_log.txt</output_file>
+                    <output_file>$(DDS_SECURE_DEMO_HOME)/apps/trireader/deploy/trireader_log.txt</output_file>
                 </logging>
             </participant_factory_qos>
 
             <participant_qos>
                 <!-- TODO: These can help identify your app in tools like Admin Console -->
                 <participant_name>
-                    <name>Secureddemo_app</name>
-                    <role_name>demo_app</role_name>
+                    <name>Securedtrireader</name>
+                    <role_name>trireader</role_name>
                 </participant_name>
 
                 <!-- TODO: SHMEM is disable for demos -->
@@ -117,21 +117,83 @@
                         <!-- This applications's identity certificate -->
                         <element>
                             <name>com.rti.serv.secure.authentication.certificate_file</name>
-                            <value>$(DDS_SECURE_DEMO_HOME)/apps/demo_app/deploy/demo_app.pem</value>
+                            <value>$(DDS_SECURE_DEMO_HOME)/apps/trireader/deploy/trireader.pem</value>
                         </element>
                         <!-- This app's private key (KEEP PRIVATE!)-->
                         <element>
                             <name>com.rti.serv.secure.authentication.private_key_file</name>
-                            <value>$(DDS_SECURE_DEMO_HOME)/apps/demo_app/deploy/private/demo_appkey.pem</value>
+                            <value>$(DDS_SECURE_DEMO_HOME)/apps/trireader/deploy/private/trireaderkey.pem</value>
                         </element>
                         <!-- Permissions file for this application, signed by Permissions CA -->
                         <element>
                             <name>com.rti.serv.secure.access_control.permissions_file</name>
-                            <value>$(DDS_SECURE_DEMO_HOME)/apps/demo_app/deploy/demo_app_permissions_signed.p7s</value>
+                            <value>$(DDS_SECURE_DEMO_HOME)/apps/trireader/deploy/trireader_permissions_signed.p7s</value>
                         </element>
                     </value>
                 </property>
             </participant_qos>
         </qos_profile>
+
+        <!-- TODO: Use the profile below as a template for setting up profiles -->
+        <!-- TODO: for the data flows in your system.  Typically, it's a good -->
+        <!-- TODO: idea to create matching writer and reader QoS settings in -->
+        <!-- TODO: a single profile. In a typical application, you might have -->
+        <!-- TODO: anywhere from 3-12 individual data flow profiles -->
+
+        <qos_profile name="DataFlow1" base_name="BuiltinQosLib::Generic.Common" is_default_qos="false">
+
+            <datawriter_qos>
+                <publication_name>
+                    <name>TopicnameWriter</name>
+                    <role_name>TopicnameWriter</role_name>
+                </publication_name>
+
+                <history>
+                    <kind>KEEP_LAST_HISTORY_QOS</kind>
+                    <depth>6</depth>
+                </history>
+
+                <reliability>
+                    <kind>RELIABLE_RELIABILITY_QOS</kind>
+                    <max_blocking_time>
+                        <sec>1</sec>
+                        <nanosec>0</nanosec>
+                    </max_blocking_time>
+                </reliability>
+
+                <lifespan>
+                    <duration>
+                        <sec>5</sec>
+                        <nanosec>0</nanosec>
+                    </duration>
+                </lifespan>
+            </datawriter_qos>
+
+            <datareader_qos>
+                <subscription_name>
+                    <name>TopicnameReader</name>
+                    <role_name>TopicnameReader</role_name>
+                </subscription_name>
+
+                <!-- TODO: If you are fanning data out to many receivers, -->
+                <!-- TODO: you can specify a shared multicast receive -->
+                <!-- TODO: address for all data readers of the same topic. -->
+
+                <!--
+                <multicast>
+                    <value>
+                        <element>
+                            <receive_address>239.255.1.1</receive_address>
+                        </element>
+                    </value>
+                </multicast>
+                -->
+                <history>
+                    <kind>KEEP_LAST_HISTORY_QOS</kind>
+                    <depth>6</depth>
+                </history>
+            </datareader_qos>
+        </qos_profile>
+
     </qos_library>
 </dds>
