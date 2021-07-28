@@ -2,24 +2,13 @@
 <dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
      xsi:noNamespaceSchemaLocation="http://community.rti.com/schema/6.1.0/rti_routing_service.xsd">
     <qos_library name="SecureRouting">
-
         <participant_qos name="SecureSide" base_name="BuiltinQosLib::Generic.Security">
-            <participant_factory_qos>
-                <logging>
-                    <verbosity>ALL</verbosity>
-                    <category>ALL</category>
-                    <print_format>MAXIMAL</print_format>
-                    <output_file>$(DDS_SECURE_DEMO_HOME)/apps/logfile.txt</output_file>
-                </logging>
-            </participant_factory_qos>
-
             <property>
                 <value>
                         <element>
                             <name>com.rti.serv.secure.logging.mode_mask</name>
                             <value>BUILTIN | SECURITY_TOPIC</value>
                         </element>
-                        <!-- TODO: Specify the verbosity of the log messages -->
                         <element>
                             <name>com.rti.serv.secure.logging.verbosity</name>
                             <value>NOTICE</value>
@@ -51,7 +40,6 @@
                 </value>
             </property>
         </participant_qos>
-        </qos_profile>
     </qos_library>
 
     <routing_service name="example">
@@ -59,13 +47,12 @@
         <administration><domain_id>1</domain_id></administration>
 
         <domain_route name="Route" enabled="true">
-            
             <!-- Participant 0 is the non-secure domain (domain 0) -->
             <participant name="participant0">
                 <domain_id>0</domain_id>
             </participant>
 
-            <!-- Participant 1 is the secured domain (domain 2) -->
+            <!-- Participant 6 is the secured domain (domain 6) -->
             <participant name="participant6">
                 <domain_id>6</domain_id>
                 <participant_qos base_name="SecureRouting::SecureSide"></participant_qos>
