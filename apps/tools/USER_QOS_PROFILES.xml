@@ -17,7 +17,7 @@
                     <verbosity>ERROR</verbosity>
                     <category>ALL</category>
                     <print_format>VERBOSE</print_format>
-                    <output_file>$(DDS_SECURE_DEMO_HOME)/apps/tools/deploy/tools_log.txt</output_file>
+                    <output_file>$(DDS_SECURE_DEMO_HOME)/apps/tools/tools_log.txt</output_file>
                 </logging>
             </participant_factory_qos>
 
