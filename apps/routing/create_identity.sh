@@ -6,10 +6,10 @@ app_name=routing
 echo "Creating identity for ${app_name}:"
 
 echo "+ Private key deployed to './deploy/private/${app_name}.key'"
-openssl ecparam -name secp384r1 -genkey -noout -out deploy/private/${app_name}key.pem
+openssl ecparam -name secp256r1 -genkey -noout -out deploy/private/${app_name}key.pem
 
 echo "+ Create Certificate Signing Request: './${app_name}.csr'"
-openssl req -new -sha384 -key deploy/private/${app_name}key.pem -out ${app_name}.csr -config ${app_name}.cnf
+openssl req -new -sha256 -key deploy/private/${app_name}key.pem -out ${app_name}.csr -config ${app_name}.cnf
 
 echo "+ Requesting signing of certificate"
 openssl ca -config ../../ca/identity/openssl.cnf -days 3650 -in ${app_name}.csr -out deploy/${app_name}.pem
