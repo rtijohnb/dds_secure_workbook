@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="/Applications/rti_connext_dds-5.3.1/resource/schema/dds_security_permissions.xsd">
+    xsi:noNamespaceSchemaLocation="http://community.rti.com/schema/7.2.0/rti_dds_qos_profiles.xsd">
 
     <permissions>
 
@@ -20,7 +20,7 @@
                 <domains>
                     <id_range>
                         <min>2</min>
-                        <max>6</max>
+                        <max>9</max>
                     </id_range>
                 </domains>
                 <publish>
@@ -45,7 +45,7 @@
                 <domains>
                     <id_range>
                         <min>2</min>
-                        <max>6</max>
+                        <max>9</max>
                     </id_range>
                 </domains>
 
